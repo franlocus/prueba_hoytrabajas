@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_15_203929) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_16_145528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "banks", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string "name"
+    t.string "nit"
+    t.string "contact_person_name"
+    t.string "contact_person_number"
+    t.string "bank_name"
+    t.string "bank_account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

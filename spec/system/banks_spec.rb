@@ -41,6 +41,14 @@ RSpec.describe 'Banks' do
         expect(page).to have_content(I18n.t('errors.messages.blank'))
       end
 
+      it 'does not create with a name taken' do
+        click_on I18n.t('bank.new')
+        fill_in 'bank_name', with: bank.name
+
+        find('input[name="commit"]').click
+        expect(page).to have_content(I18n.t('errors.messages.taken'))
+      end
+
       it 'does not create with a long name' do
         click_on I18n.t('bank.new')
         fill_in 'bank_name', with: SecureRandom.alphanumeric(60)

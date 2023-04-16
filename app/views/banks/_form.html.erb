@@ -2,7 +2,11 @@
   <% if bank.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= t('errors.template.body') %></h2>
-      <h3><%= bank.errors.first.full_message %> </h3>
+      <ul>
+        <% bank.errors.each do |error| %>
+          <li>- <%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 

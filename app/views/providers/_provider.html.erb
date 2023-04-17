@@ -1,0 +1,30 @@
+<div id="<%= dom_id provider %>">
+  <tr class="hover:bg-gray-50">
+    <td class="whitespace px-3 py-4 text-sm break-all">
+        <%= link_to provider.name, provider, class: "text-blue-600 hover:text-blue-700 hover:underline" %>
+    </td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm">
+      <%= attribute_or_empty_message_for(provider.nit) %>
+    </td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm">
+      <%= provider.contact_person_name %>
+    </td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm">
+      <%= attribute_or_empty_message_for(provider.contact_person_number) %>
+    </td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm">
+      <%= provider.bank_name %>
+    </td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm">
+      <%= attribute_or_empty_message_for(provider.bank_account_number) %>
+    </td>
+    <td class="whitespace-nowrap p-2 text-sm">
+      <%= link_to t('provider.edit'), edit_provider_path(provider), class: "rounded-lg p-2 ml-2 text-blue-500 border-blue-500 border transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" %>
+      <div class="inline-block ml-2">
+        <%= button_to t('provider.destroy'), provider_path(provider), method: :delete, class: "rounded-lg p-2 ml-2 text-red-500 border-red-500 border transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none", data: { turbo_confirm: t('confirm_destroy') } %>
+      </div>
+    </td>
+
+  </tr>
+</div>
+

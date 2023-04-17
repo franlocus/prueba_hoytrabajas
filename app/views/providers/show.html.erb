@@ -1,0 +1,41 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <div id="<%= dom_id @provider %>">
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Provider.human_attribute_name(:name) %></strong>
+        <%= @provider.name %>
+      </p>
+
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Provider.human_attribute_name(:nit) %></strong>
+        <%= attribute_or_empty_message_for(@provider.nit) %>
+      </p>
+
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Provider.human_attribute_name(:contact_person_name) %></strong>
+        <%= @provider.contact_person_name %>
+      </p>
+
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Provider.human_attribute_name(:contact_person_number) %></strong>
+        <%= attribute_or_empty_message_for(@provider.contact_person_number) %>
+      </p>
+
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Provider.human_attribute_name(:bank_name) %></strong>
+        <%= @provider.bank_name %>
+      </p>
+
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Provider.human_attribute_name(:bank_account_number) %></strong>
+        <%= attribute_or_empty_message_for(@provider.bank_account_number) %>
+      </p>
+    </div>
+
+    <%= link_to t('provider.edit'), edit_provider_path(@provider), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to t('provider.destroy'), provider_path(@provider), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium", data: { turbo_confirm: t('confirm_destroy') } %>
+    </div>
+    <%= link_to t('back'), providers_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>

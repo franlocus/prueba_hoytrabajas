@@ -1,0 +1,29 @@
+<div class="flex-row">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= t('provider.plural') %></h1>
+    <%= link_to t('provider.new'), new_provider_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="providers" class="rounded-lg border border-gray-200 shadow-md m-5">
+    <table class="w-full overflow-scroll border-collapse bg-white text-left text-sm text-gray-700">
+      <thead class="bg-gray-50 text-center">
+        <tr>
+          <th scope="col" class="px-12 py-4 font-medium text-gray-900"><%= Provider.human_attribute_name(:name) %></th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900"><%= Provider.human_attribute_name(:nit) %></th>
+          <th scope="col" class="px-2 py-4 font-medium text-gray-900"><%= Provider.human_attribute_name(:contact_person_name) %></th>
+          <th scope="col" class="px-2 py-4 font-medium text-gray-900"><%= Provider.human_attribute_name(:contact_person_number) %></th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900"><%= Provider.human_attribute_name(:bank_name) %></th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900"><%= Provider.human_attribute_name(:bank_account_number) %></th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+        <%= render @providers %>
+      </tbody>
+    </table>
+
+    <div class="p-5">
+      <%== pagy_nav(@pagy) %>
+    </div>
+  </div>
+</div>

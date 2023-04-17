@@ -9,14 +9,37 @@ es:
     destroy: Eliminar banco
     created: El banco se creó con éxito.
     updated: El banco se actualizó con éxito.
-    destroyed: El banco se destruyó con éxito.
+    destroyed: El banco se eliminó con éxito.
+  provider:
+    plural: Proveedores
+    show: Ver proveedor
+    new: Nuevo proveedor
+    edit: Editar proveedor
+    destroy: Eliminar proveedor
+    created: El proveedor se creó con éxito.
+    updated: El proveedor se actualizó con éxito.
+    destroyed: El proveedor se eliminó con éxito.
+
   activerecord:
     models:
       bank: Banco
+      provider: Proveedor
     attributes:
       bank:
         name: Nombre
+      provider:
+        name: Nombre
+        nit: NIT
+        contact_person_name: Nombre de la persona de contacto
+        contact_person_number: Número de la persona de contacto
+        bank_name: Nombre del banco
+        bank_account_number: Número de cuenta bancaria
     errors:
+      models:
+        provider:
+          attributes:
+            nit:
+              invalid: 'con formato 123456789-1 (9 dígitos guion 1 dígito)'
       messages:
         record_invalid: 'La validación falló: %{errors}'
         restrict_dependent_destroy:
@@ -235,3 +258,4 @@ es:
     pm: pm
   back: Volver
   confirm_destroy: ¿Estás seguro que deseas eliminarlo?
+  empty_field: Sin información en la tabla

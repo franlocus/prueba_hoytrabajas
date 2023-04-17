@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Banks' do
+  let!(:user) { create(:user) }
   let!(:bank) { create(:bank) }
 
   before do
+    sign_in(user)
     visit banks_path
   end
 

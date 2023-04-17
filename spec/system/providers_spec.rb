@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Provider' do
+  let!(:user) { create(:user) }
   let!(:bank) { create(:bank) }
-  let!(:provider) { create(:provider, bank_name: bank.name) }
+  let!(:provider) { create(:provider) }
 
   before do
+    sign_in(user)
     create_list(:provider, 15, bank_name: bank.name)
     visit providers_path
   end

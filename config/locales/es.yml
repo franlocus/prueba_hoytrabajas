@@ -23,6 +23,10 @@ es:
     title: Dashboard
     total_bank_count: Cantidad de bancos registrados
     total_provider_count: Cantidad de proveedores registrados
+  home:
+    title: Inicio
+    welcome: Bienvenido!
+    welcome_info: Tendrás que iniciar sesión o registrarte para usar el sistema.
 
   activerecord:
     models:

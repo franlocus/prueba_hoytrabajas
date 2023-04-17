@@ -1,0 +1,9 @@
+<div class="flex w-full space-x-8">
+  <%= link_to t('dashboard.title'), dashboard_path, class: "rounded mx-1 px-2 py-1 border border-blue-500 text-blue-700 hover:text-blue-900 hover:bg-blue-200" %>
+  <%= link_to t('bank.plural'), banks_path, class: "rounded mx-1 px-2 py-1 border border-blue-500 text-blue-700 hover:text-blue-900 hover:bg-blue-200" %>
+  <%= link_to t('provider.plural'), providers_path, class: "rounded mx-1 px-2 py-1 border border-blue-500 text-blue-700 hover:text-blue-900 hover:bg-blue-200" %>
+</div>
+<div class="px-6 py-4 flex-shrink-0">
+  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, class: "rounded mx-1 px-2 py-1 border border-red-500 text-red-700 hover:text-red-900 hover:bg-red-200" %>
+</div>
+

@@ -3,7 +3,7 @@ class BanksController < ApplicationController
 
   # GET /banks
   def index
-    @banks = Bank.all
+    @pagy, @banks = pagy(Bank.order(created_at: :desc), items: 10)
   end
 
   # GET /banks/1

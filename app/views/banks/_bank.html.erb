@@ -1,12 +1,14 @@
 <div id="<%= dom_id bank %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1"><%= t('bank.name') %></strong>
-    <%= bank.name %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to t('bank.show'), bank, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to t('bank.edit'), edit_bank_path(bank), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+  <tr class="hover:bg-gray-50">
+    <td class="whitespace px-3 py-4 break-all">
+      <%= link_to bank.name, bank, class: "text-blue-600 hover:text-blue-700 hover:underline" %>
+    </td>
+    <td class="whitespace-nowrap p-2 text-sm text-right">
+      <%= link_to t('bank.edit'), edit_bank_path(bank), class: "rounded-lg p-2 ml-2 text-blue-500 border-blue-500 border transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" %>
+      <div class="inline-block ml-2">
+        <%= button_to t('bank.destroy'), bank_path(bank), method: :delete, class: "rounded-lg p-2 ml-2 text-red-500 border-red-500 border transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none", data: { turbo_confirm: t('confirm_destroy') } %>
+      </div>
+    </td>
+  </tr>
 </div>
+

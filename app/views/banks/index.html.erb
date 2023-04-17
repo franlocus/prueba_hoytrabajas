@@ -4,7 +4,21 @@
     <%= link_to t('bank.new'), new_bank_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="banks" class="min-w-full">
-    <%= render @banks %>
+   <div id="banks" class="rounded-lg border border-gray-200 shadow-md m-5">
+    <table class="w-full overflow-scroll border-collapse bg-white text-left text-sm text-gray-700">
+      <thead class="bg-gray-50 text-center">
+        <tr>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900"><%= Bank.human_attribute_name(:name) %></th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+        <%= render @banks %>
+      </tbody>
+    </table>
+
+    <div class="p-5">
+      <%== pagy_nav(@pagy) %>
+    </div>
   </div>
 </div>

@@ -1,6 +1,11 @@
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
-    <%= render @bank %>
+     <div id="<%= dom_id @bank %>">
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= Bank.human_attribute_name(:name) %></strong>
+        <%= @bank.name %>
+      </p>
+    </div>
 
     <%= link_to t('bank.edit'), edit_bank_path(@bank), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">

@@ -19,6 +19,10 @@ es:
     created: El proveedor se creó con éxito.
     updated: El proveedor se actualizó con éxito.
     destroyed: El proveedor se eliminó con éxito.
+  dashboard:
+    title: Dashboard
+    total_bank_count: Cantidad de bancos registrados
+    total_provider_count: Cantidad de proveedores registrados
 
   activerecord:
     models:

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "banks#index"
+  root "dashboard#index"
+
+  get 'dashboard', to: 'dashboard#index'
   resources :providers
   resources :banks
 end

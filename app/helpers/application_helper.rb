@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def flash_class(flash_type)
     case flash_type
     when 'notice'

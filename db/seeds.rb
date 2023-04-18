@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Provider.destroy_all
+Bank.destroy_all
+User.destroy_all
 
 20.times do |i|
-  Bank.create(name: "Bank N #{i}")
-end
-
-Bank.find_each do |bank|
+  bank = Bank.create(name: "Bank N #{i}")
   Provider.create(
     name: "Provider N #{bank.id}",
     nit: '123456789-1',
@@ -20,3 +20,5 @@ Bank.find_each do |bank|
     bank_account_number: '123456789012345'
   )
 end
+
+User.create!(email: "user@email.com", password: "123456")

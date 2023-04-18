@@ -1,24 +1,51 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby Info
 
-Things you may want to cover:
+Ruby version: ruby 3.1.2p20
+Rails version: 7.0.4
 
-* Ruby version
+# Steps to reproduce
 
-* System dependencies
 
-* Configuration
+## Clone repo
+git clone https://github.com/franlocus/prueba_hoytrabajas
 
-* Database creation
+# Docker
+## Initial setup
+```
+cp .env.example .env
+docker compose build
+docker compose run --rm web bin/rails db:setup
+docker compose run --rm web bin/rails db:seed
+```
+## Running the Rails app
+```
+docker compose up
+```
+# Local
+## Install dependencies
 
-* Database initialization
+bundle install
 
-* How to run the test suite
+## Create and migrate database
 
-* Services (job queues, cache servers, search engines, etc.)
+rails db:create
 
-* Deployment instructions
+rails db:migrate
 
-* ...
+## Populate database with demo data
+
+rails db:seed
+
+> Demo users info:
+
+> 1. email: user@email.com
+  password: 123456
+ 
+## Run tests
+
+rspec
+## Boot server
+
+./bin/dev
